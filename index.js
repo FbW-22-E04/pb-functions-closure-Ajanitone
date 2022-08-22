@@ -35,12 +35,11 @@ dansRoll();
 // 3. Write a function that would allow you to do this using a closure.
 
 function createBase(num) {
-  if (num === 0) {
-    return num;
-  }
-  return num + 6;
+  return function (num2) {
+    return num + num2;
+  };
 }
 
-const addSix = createBase(10);
-console.log("Q3:", addSix); // returns 16
+const addSix = createBase(6);
+console.log("Q3:", addSix(10)); // returns 16
 // addSix(21); // returns 27
